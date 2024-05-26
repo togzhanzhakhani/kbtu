@@ -1,0 +1,25 @@
+.card {
+	padding: 2.3125rem 3.75rem;
+
+	width: 100%;
+	max-width: 23rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.25rem;
+	border-radius: 1rem;
+}
+
+.card_icon {
+	--max_size: 3.125rem;
+
+	max-width: (var(--max_size));
+	max-height: (var(--max_size));
+}
+
+.card_title {
+	font-size: 1.4375rem;
+	text-align: center;
+}
