@@ -1,7 +1,7 @@
-import directionsData from "@modules/home/utils/directionsData";
-import styles from "./home_directions.module.css";
 import HomeDirectionsCard from "../directions_card/HomeDirectionsCard";
 import Container from "@common/components/container/Container";
+import directionsData from "@modules/home/utils/directionsData";
+import styles from "./home_directions.module.css";
 
 // WARN: styling issue
 // How does cards-grid behave?
@@ -12,7 +12,7 @@ import Container from "@common/components/container/Container";
 const HomeDirections = () => {
 
 	return (
-		<div className={styles.directions}>
+		<section className={styles.directions}>
 			<Container maxWidth="80rem" isCentered>
 				<h2 className={styles.directions_heading}>Направления</h2>
 
@@ -30,7 +30,7 @@ const HomeDirections = () => {
 					}
 				</div>
 			</Container>
-		</div>
+		</section>
 	);
 };
 
