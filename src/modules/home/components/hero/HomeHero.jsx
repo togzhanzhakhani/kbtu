@@ -4,7 +4,7 @@ import styles from "./home_hero.module.css";
 const HomeHero = () => {
 
 	return (
-		<div className={styles.hero}>
+		<section className={styles.hero}>
 			<h1 className={styles.hero_header}>
 				Казахстанско-Британский технический университет. 
 				Инновации и Экспертиза для промышленности Казахстана
@@ -13,7 +13,7 @@ const HomeHero = () => {
 			<div className={styles.button_wrapper}>
 				<ButtonBlueRound text="Подать заявку" />
 			</div>
-		</div>
+		</section>
 	);
 };
 
