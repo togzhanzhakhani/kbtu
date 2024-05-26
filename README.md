@@ -1,8 +1,15 @@
-# React + Vite
+# ESG Lab frontend application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Built with Vite + React
 
-Currently, two official plugins are available:
+## How to use?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone or pull the project.
+2. Install Node.js with npm if not installed.
+3. Run `npm install` in root folder of the project in order to install dependencies.
+4. Run `npm run dev` in root folder of the project in order to run the project locally.
+
+## Reference
+[Architecture reference.](https://alexkondov.com/tao-of-react/)
+
+'placeholder' file is necessary, because git won't push empty folders to Github. It also serves to force folder structure spread.
