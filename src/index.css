@@ -22,11 +22,13 @@ body {
 button {
   background: none;
 	border: none;
+  font-family: inherit;
   cursor: pointer;
 }
 
 a {
   color: inherit;
+  font-family: inherit;
   text-decoration: none;
 }
 
