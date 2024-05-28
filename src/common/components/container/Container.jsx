@@ -1,15 +1,25 @@
+import containerTypes from "@common/utils/containerTypes";
 
-const Container = ({children, maxWidth = "none", isCentered = false}) => {
+const Container = ({
+	type = 'div',
+	maxWidth = 'none', 
+	isCentered = false,
+	className = '',
+	children, 
+}) => {
 
+	// WARN: what is prioritized? class or style?
 	const configStyle = {
 		maxWidth: maxWidth,
-		margin: isCentered ? "0 auto" : "auto",
+		margin: isCentered ? '0 auto' : 'auto',
 	};
 
+	const ContainerElement = containerTypes[type] || <div />;
+
 	return (
-		<div style={configStyle}>
+		<ContainerElement  className={className} style={configStyle}>
 			{children}
-		</div>
+		</ContainerElement>
 	);
 };
 
