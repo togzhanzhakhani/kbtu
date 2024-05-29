@@ -7,7 +7,7 @@ const HomePartners = () => {
 	return (
 		<Container 
 			type='section'
-			maxWidth='80rem' 
+			maxWidth='110rem' 
 			isCentered
 			className={styles.section}
 		>

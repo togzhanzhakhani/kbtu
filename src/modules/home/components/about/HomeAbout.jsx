@@ -8,7 +8,7 @@ const HomeAbout = () => {
 	return (
 		<Container 
 			type='section'
-			maxWidth='80rem' 
+			maxWidth='110rem' 
 			isCentered
 			className={styles.about}
 		>

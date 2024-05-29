@@ -20,9 +20,9 @@ const partnersLogos = [
 	},
 	{
 		id: 4,
-		name: 'Baker Hughes',
-		alt: 'baker hughes logo',
-		imageUrl: '/src/assets/images/logo_baker.png',
+		name: 'Halyk',
+		alt: 'halyk bank logo',
+		imageUrl: '/src/assets/images/logo_halyk.png',
 	},
 	{
 		id: 5,
@@ -32,9 +32,9 @@ const partnersLogos = [
 	},
 	{
 		id: 6,
-		name: 'Halyk',
-		alt: 'halyk bank logo',
-		imageUrl: '/src/assets/images/logo_halyk.png',
+		name: 'Baker Hughes',
+		alt: 'baker hughes logo',
+		imageUrl: '/src/assets/images/logo_baker.png',
 	},
 	{
 		id: 7,

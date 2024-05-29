@@ -3,18 +3,12 @@ import Container from '@common/components/container/Container';
 import directionsData from '@modules/home/utils/directionsData';
 import styles from './home_directions.module.css';
 
-// WARN: styling issue
-// How does cards-grid behave?
-// Does it have 3 columns at all times?
-// What if there are less than 3 items in a row?
-// How are the said cards aligned? 
-
 const HomeDirections = () => {
 
 	return (
 		<Container 
 			type='section'
-			maxWidth='80rem' 
+			maxWidth='110rem' 
 			isCentered
 			className={styles.directions}
 		>
