@@ -23,7 +23,6 @@ const aboutCardsData = [
 		],
 		isBodyBullettedList: false,
 	},
-
 	{
 		id: 2,
 		imageUrl: "/src/assets/images/home_about_2.png",
@@ -43,7 +42,6 @@ const aboutCardsData = [
 		],
 		isBodyBullettedList: false,
 	},
-
 	{
 		id: 3,
 		imageUrl: "/src/assets/images/home_about_3.png",
@@ -67,7 +65,6 @@ const aboutCardsData = [
 		],
 		isBodyBullettedList: true,
 	},
-
 	{
 		id: 4,
 		imageUrl: "/src/assets/images/home_about_4.png",

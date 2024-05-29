@@ -1,16 +1,33 @@
-import Container from "@common/components/container/Container";
-import styles from "./home_partners.module.css";
+import Container from '@common/components/container/Container';
+import styles from './home_partners.module.css';
+import partnersLogos from '@modules/home/utils/partnersLogos';
 
 const HomePartners = () => {
 
 	return (
-		<section className={styles.section}>
-			<Container maxWidth="80rem" isCentered>
-				<h3 className={styles.heading}>Партнеры</h3>
+		<Container 
+			type='section'
+			maxWidth='110rem' 
+			isCentered
+			className={styles.section}
+		>
+			<h3 className={styles.heading}>Партнеры</h3>
 
-				
-			</Container>
-		</section>
+			<div className={styles.logos}>
+				{
+					partnersLogos.map((p, i) => {
+						return (
+							<img 
+								key={p.id == null ? i : p.id}
+								src={p.imageUrl}
+								alt={p.alt || ''}
+								className={styles.logo}
+							/>
+						)
+					})
+				}
+			</div>
+		</Container>
 	);
 };
 

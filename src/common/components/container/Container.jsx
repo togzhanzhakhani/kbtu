@@ -1,15 +1,27 @@
+import containerTypes from "@common/utils/containerTypes";
+import mergeObjects from "@common/utils/mergeObjects";
 
-const Container = ({children, maxWidth = "none", isCentered = false}) => {
+const Container = ({
+	type = 'div',
+	maxWidth = 'none', 
+	isCentered = false,
+	className = '',
+	style,
+	children, 
+}) => {
 
+	// WARN: what is prioritized? class or style?
 	const configStyle = {
 		maxWidth: maxWidth,
-		margin: isCentered ? "0 auto" : "auto",
+		margin: isCentered ? '0 auto' : 'auto',
 	};
 
+	const ContainerElement = containerTypes[type] || <div />;
+
 	return (
-		<div style={configStyle}>
+		<ContainerElement  className={className} style={mergeObjects(style, configStyle) }>
 			{children}
-		</div>
+		</ContainerElement>
 	);
 };
 
