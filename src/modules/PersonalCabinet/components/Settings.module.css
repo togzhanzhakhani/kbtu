@@ -1,0 +1,60 @@
+.settings {
+    padding: 20px;
+    background-color: #F5F5F5;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 52%;
+  }
+  
+  .input {
+    padding: 20px 5px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #F5F5F5;
+    color: #000;;
+    border-bottom: 2px solid #8D8D8D;
+    font-size: 14px;
+  }
+
+  .input:focus {
+    border: none;
+    box-shadow: none; 
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    display: flex;
+    padding: 12px 30px;
+    font-size: 17px;
+    border: none;
+    background-color: #00357D;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .button:hover {
+    background-color: #022e6c;
+  }
+  
+  .icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+  }
