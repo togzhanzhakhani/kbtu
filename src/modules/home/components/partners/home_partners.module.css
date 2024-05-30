@@ -49,7 +49,7 @@
 }
 
 .logos_slide {
-	--animation-frequency: 10s;
+	--animation-frequency: 25s;
 
   display: inline-block;
   animation: slide var(--animation-frequency) infinite linear;
