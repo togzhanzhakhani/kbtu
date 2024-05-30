@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styles from './Settings.module.css';
-import resetIcon from '../../../assets/icons/reset.png'
-import saveIcon from '../../../assets/icons/save.png'
+import { useState } from 'react';
+import resetIcon from '@assets/icons/reset.png';
+import saveIcon from '@assets/icons/save.png';
+import styles from './settings.module.css';
 
 const Settings = ({ user }) => {
   const [formData, setFormData] = useState({
@@ -46,6 +46,7 @@ const Settings = ({ user }) => {
           placeholder="Имя"
           className={styles.input}
         />
+
         <input
           type="text"
           name="lastName"
@@ -54,16 +55,20 @@ const Settings = ({ user }) => {
           placeholder="Фамилия"
           className={styles.input}
         />
-        {user.role !== 'researcher' && (
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            className={styles.input}
-          />
-        )}
+
+        {
+          user.role !== 'researcher' && (
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className={styles.input}
+            />
+          )
+        }
+
         <input
           type="text"
           name={user.role === 'researcher' ? 'iin' : 'bin'}
@@ -72,16 +77,20 @@ const Settings = ({ user }) => {
           placeholder={user.role === 'researcher' ? 'ИИН' : 'БИН'}
           className={styles.input}
         />
-        {user.role !== 'researcher' && (
-          <input
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            placeholder="Компания"
-            className={styles.input}
-          />
-        )}
+
+        {
+          user.role !== 'researcher' && (
+            <input
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              placeholder="Компания"
+              className={styles.input}
+            />
+          )
+        }
+
         <input
           type="text"
           name="phone"
@@ -90,6 +99,7 @@ const Settings = ({ user }) => {
           placeholder="Номер телефона"
           className={styles.input}
         />
+
         <input
           type="password"
           name="password"
@@ -99,14 +109,16 @@ const Settings = ({ user }) => {
           className={styles.input}
         />
       </div>
+
       <div className={styles.buttons}>
-          <button onClick={handleReset} className={styles.button}>
+        <button onClick={handleReset} className={styles.button}>
           <img src={resetIcon} alt="Date" className={styles.icon} />Сбросить
-          </button>
-          <button onClick={handleSubmit} className={styles.button}>
+        </button>
+        
+        <button onClick={handleSubmit} className={styles.button}>
           <img src={saveIcon} alt="Date" className={styles.icon} />Сохранить
-          </button>
-        </div>
+        </button>
+      </div>
     </div>
   );
 };
