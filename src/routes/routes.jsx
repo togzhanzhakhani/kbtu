@@ -1,3 +1,4 @@
+import PersonalCabinet from "@modules/PersonalCabinet/PersonalCabinet";
 import Login from "@modules/authorization/Login";
 import Registration from "@modules/authorization/Registration";
 import Home from "@modules/home/Home";
@@ -14,6 +15,10 @@ const routes = [
 	{
 		path: "register",
 		element: <Registration />
+	},
+	{
+		path: "/profile",
+		element: <PersonalCabinet />
 	}
 ];
 
