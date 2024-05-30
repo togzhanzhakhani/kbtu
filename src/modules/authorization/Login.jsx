@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { validate } from "./util";
-import SERVER_ADDRESS from "../../baseUrl";
 import "./auth.css";
 
 const Login = () => {
+  const SERVER_ADDRESS = import.meta.env.VITE_SERVER_ADDRESS;
+  console.log(SERVER_ADDRESS);
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -44,7 +46,7 @@ const Login = () => {
       password: formData.password
     };
 
-    axios.post(`${SERVER_ADDRESS}:8000/user/login/`, data)
+    axios.post(`${SERVER_ADDRESS}/user/login/`, data)
       .then(res => {
         localStorage.setItem('refresh', res.data.refresh);
         localStorage.setItem('access', res.data.access);
