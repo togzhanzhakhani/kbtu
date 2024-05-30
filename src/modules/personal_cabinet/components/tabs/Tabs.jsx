@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import MyRequests from './MyRequests';
-import MyProjects from './MyProjects';
-import Settings from './Settings';
-import styles from './Tabs.module.css'
+import { useState } from 'react';
+import MyRequests from '../my_requests/MyRequests';
+import MyProjects from '../my_projects/MyProjects';
+import Settings from '../settings/Settings';
+import styles from './tabs.module.css';
 
 const Tabs = ({ user }) => {
   const [activeTab, setActiveTab] = useState('requests');
@@ -16,14 +16,18 @@ const Tabs = ({ user }) => {
         >
           Мои заявки
         </button>
-        {user.role === 'researcher' && (
-          <button
-            className={`${styles.tabButton} ${activeTab === 'projects' ? styles.active : ''}`}
-            onClick={() => setActiveTab('projects')}
-          >
-            Мои проекты
-          </button>
-        )}
+
+        {
+          user.role === 'researcher' && (
+            <button
+              className={`${styles.tabButton} ${activeTab === 'projects' ? styles.active : ''}`}
+              onClick={() => setActiveTab('projects')}
+            >
+              Мои проекты
+            </button>
+          )
+        }
+
         <button
           className={`${styles.tabButton} ${activeTab === 'settings' ? styles.active : ''}`}
           onClick={() => setActiveTab('settings')}
@@ -31,13 +35,15 @@ const Tabs = ({ user }) => {
           Настройки
         </button>
       </div>
+
       <div className={styles.tabContent}>
         {activeTab === 'requests' && <MyRequests />}
+
         {activeTab === 'projects' && user.role === 'researcher' && <MyProjects />}
+
         {activeTab === 'settings' && <Settings user={user} />}
       </div>
     </div>
-
   );
 };
 
