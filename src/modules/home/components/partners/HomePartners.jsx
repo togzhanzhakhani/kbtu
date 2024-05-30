@@ -1,7 +1,6 @@
 import Container from '@common/components/container/Container';
 import styles from './home_partners.module.css';
 import partnersLogos from '@modules/home/utils/partnersLogos';
-import mergeClassnames from '@common/utils/mergeClassnames';
 
 const HomePartners = () => {
 
