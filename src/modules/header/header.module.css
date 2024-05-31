@@ -2,11 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-inline-end: 40px;
     width: 100%;
     height: 90px;
-    background-color: rgba(0, 53, 125, 1);
+    background-color: var(--color-blue-dark);
 }
 
 .main * {
