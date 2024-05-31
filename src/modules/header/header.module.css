@@ -1,5 +1,6 @@
 .main {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-left: 40px;
     padding-right: 40px;
@@ -8,27 +9,26 @@
     background-color: rgba(0, 53, 125, 1);
 }
 
-.main button {
+.main * {
     color: white;
-}
+} 
 
 .kbtu_icon {
     width: 146px;
-    height:47px;
+    height: 47px;
     background-size: 100% 100%;
     background-image: url("/src/assets/images/logo_kbtu.png");
 }
 
 .navigation_buttons {
-    display:flex;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 50%;
 }
 
-.navigation_buttons button {
-    margin-right: auto;
-    font-size: 16px;
+.navigation_buttons * {
+    font-size: 1rem;
 }
 
 .right_side_elements {
