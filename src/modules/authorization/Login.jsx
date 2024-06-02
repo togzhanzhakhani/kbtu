@@ -6,7 +6,6 @@ import "./auth.css";
 
 const Login = () => {
   const SERVER_ADDRESS = import.meta.env.VITE_SERVER_ADDRESS;
-  console.log(SERVER_ADDRESS);
 
   const navigate = useNavigate();
 
