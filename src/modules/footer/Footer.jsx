@@ -6,7 +6,7 @@ const Footer = () => {
 	const curYear = new Date().getFullYear();
 
 	return (
-		<div className={styles.main}>
+		<footer className={styles.main}>
 			<div className={styles.main_content}>
 				<div className={styles.contact_icons}>
 					<div className={styles.kbtu_icon} />
@@ -38,7 +38,7 @@ const Footer = () => {
 				<p>Казахстанско-Британский Технический Университет {curYear}</p>
 				<p>Все права защищены</p>
 			</div>
-		</div>
+		</footer>
 	);
 };
 

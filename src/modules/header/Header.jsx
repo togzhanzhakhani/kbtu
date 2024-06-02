@@ -13,7 +13,9 @@ const Header = () => {
 				<div className={styles.navigation_buttons}>
 					<button>Проекты</button>
 					<button>Направления</button>
-					<button>Контакты</button>
+					<Link to="/contacts">
+						Контакты
+					</Link>
 					<button>О нас</button>
 				</div>
 

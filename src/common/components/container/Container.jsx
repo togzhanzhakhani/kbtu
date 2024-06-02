@@ -19,7 +19,7 @@ const Container = ({
 	const ContainerElement = containerTypes[type] || <div />;
 
 	return (
-		<ContainerElement  className={className} style={mergeObjects(style, configStyle) }>
+		<ContainerElement className={className} style={mergeObjects(style, configStyle) }>
 			{children}
 		</ContainerElement>
 	);
