@@ -3,6 +3,7 @@ import ButtonBlueRound from '@common/components/buttons/button_blue_round/Button
 import useContactForm from '@modules/contacts/hooks/useContactForm';
 import styles from './contacts_form.module.css';
 
+// TODO: form validation & verification
 const ContactsForm = () => {
 
 	const [
