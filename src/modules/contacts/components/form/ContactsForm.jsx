@@ -4,6 +4,7 @@ import useContactForm from '@modules/contacts/hooks/useContactForm';
 import styles from './contacts_form.module.css';
 
 // TODO: form validation & verification
+// NOTE: does message input transform into a textbox?
 const ContactsForm = () => {
 
 	const [

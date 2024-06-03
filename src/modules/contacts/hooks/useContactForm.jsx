@@ -12,6 +12,10 @@ const useContactForm = () => {
 		const inputName = e.target.name;
 		const newValue = e.target.value;
 		
+		if(!Object.keys(formData).includes(inputName)) {
+			console.error('Provided input name is invalid');
+		}
+
 		setFormData(prev => {
 			return {
 				...prev,
