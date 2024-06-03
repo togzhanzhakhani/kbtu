@@ -1,15 +1,14 @@
-// import doExist from '@common/utils/doExist';
+import doExist from '@common/utils/doExist';
 import styles from './input.module.css';
 
 const Input = ({
-	labelName, inputType = 'text', 
+	labelName, inputType = 'text', name = '',
 	placeholder = '', value, onChange,
 }) => {
 
-	// TODO: remove later
-	// if(!doExist(labelName, value, onChange)) {
-	// 	return;
-	// }
+	if(!doExist(labelName, value, onChange, name)) {
+		return;
+	}
 	
 	const inputDynamicStyles = {
 		color: value.length ? "var(--color-black)" : "var(--color-gray-dark)"
@@ -26,7 +25,7 @@ const Input = ({
 			</label>
 
 			<input
-				name={labelName}
+				name={name}
 				value={value}
 				type={inputType}
 				placeholder={placeholder}
