@@ -1,10 +1,12 @@
+import doExist from "@common/utils/doExist";
 
 const Button = ({
 	text, className = "",
 	color = "", backgroundColor = "",
+	onClick
 }) => {
 
-	if(text == null || text.length === 0) {
+	if(!doExist(text, onClick) || text.length === 0) {
 		return;
 	}
 
@@ -14,7 +16,11 @@ const Button = ({
 	};
 
 	return (
-		<button className={className} style={configStyles}>
+		<button 
+			className={className} 
+			style={configStyles}
+			onClick={onClick}
+		>
 			{text}
 		</button>
 	);
