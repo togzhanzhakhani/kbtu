@@ -8,7 +8,9 @@ const Header = () => {
 	return (
 		<nav>
 			<div className={styles.main}>
-				<div className={styles.kbtu_icon} />
+				<Link to="/">
+					<div className={styles.kbtu_icon} />
+				</Link>
 
 				<div className={styles.navigation_buttons}>
 					<button>Проекты</button>
