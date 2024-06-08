@@ -40,7 +40,7 @@
 
 .error-msg {
   float: right;
-  color: rgb(255, 251, 136);
+  color: var(--color-yellow);
   
 }
 

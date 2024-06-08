@@ -1,9 +1,10 @@
 import doExist from '@common/utils/doExist';
-import styles from './input.module.css';
+import styles from './contacts_input.module.css';
 
-const Input = ({
+const ContactsInput = ({
 	labelName, inputType = 'text', name = '',
 	placeholder = '', value, onChange,
+	errorMessage = '',
 }) => {
 
 	if(!doExist(labelName, value, onChange, name)) {
@@ -15,14 +16,23 @@ const Input = ({
 	};
 
 	return (
-		<div className={styles.box}>
-			<label 
-				htmlFor={labelName}
-				className={styles.label}
-				style={inputDynamicStyles}
-			>
-				{labelName}
-			</label>
+		<div className={styles.container}>
+			<div className={styles.upper_box}>
+				<label 
+					htmlFor={labelName}
+					className={styles.label}
+					style={inputDynamicStyles}
+				>
+					{labelName}
+				</label>
+
+				{
+					errorMessage && errorMessage.length > 0 &&
+					<p className={styles.error}>
+						{errorMessage}
+					</p>
+				}
+			</div>
 
 			<input
 				name={name}
@@ -36,4 +46,4 @@ const Input = ({
 	);
 };
 
-export default Input;
+export default ContactsInput;

@@ -7,7 +7,10 @@ export function validate(form, setError) {
         email: 'Введите Email'
       }))
       valid = false;
-    } else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email)){
+    } else if(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(form.email)){
+      // NOTE: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      // NOTE: EMAIL REGEX ^
+
       setError(prev => ({
         ...prev,
         email: 'Email неверный'
