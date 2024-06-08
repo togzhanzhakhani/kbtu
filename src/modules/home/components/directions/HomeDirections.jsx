@@ -9,7 +9,6 @@ const HomeDirections = () => {
 		<Container 
 			type='section'
 			maxWidth='110rem' 
-			isCentered
 			className={styles.directions}
 		>
 			<h2 className={styles.directions_heading}>Направления</h2>
