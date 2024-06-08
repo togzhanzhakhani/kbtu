@@ -16,7 +16,7 @@ const Header = () => {
 					<div className={styles.kbtu_icon} />
 				</Link>
 
-				<div className={styles.navigation_buttons}>
+				<nav className={styles.navigation_buttons}>
 					{
 						headerLinks.map(l => {
 							const isActive = currentUrl === l.url;
@@ -32,7 +32,7 @@ const Header = () => {
 							)
 					})
 					}
-				</div>
+				</nav>
 
 				<div className={styles.right_side_elements}>
 					<Link to="/login">
