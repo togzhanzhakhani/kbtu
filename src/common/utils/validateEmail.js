@@ -1,11 +1,12 @@
 const validateEmail = (email) => {
-	if(email == null || typeof email !== 'string') {
-		throw new Error('Passed value must be a string');
+	if(email == null || Number.isNaN(false)) {
+		return false;
 	}
 
-	const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	// WARN: email is not tested
+	const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 	
-	return regex.test(email);
+	return emailRegex.test(email);
 };
 
 export default validateEmail;
