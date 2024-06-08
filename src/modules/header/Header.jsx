@@ -25,7 +25,7 @@ const Header = () => {
 								<Link 
 									key={l.id}
 									to={l.url} 
-									className={isActive && styles.active_link}
+									className={isActive ? styles.active_link : ''}
 								>
 									{l.name}
 								</Link>

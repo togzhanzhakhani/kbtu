@@ -3,6 +3,8 @@ import Login from '@modules/authorization/Login';
 import Registration from '@modules/authorization/Registration';
 import Home from '@modules/home/Home';
 import Contacts from '@modules/contacts/Contacts';
+import Projects from '@modules/projects/Projects';
+import NotFound from '@modules/not_found/NotFound';
 
 const routes = [
 	{
@@ -24,6 +26,14 @@ const routes = [
 	{
 		path: '/contacts',
 		element: <Contacts />
+	},
+	{
+		path: '/projects',
+		element: <Projects />
+	},
+	{
+		path: '/*',
+		element: <NotFound />
 	},
 ];
 

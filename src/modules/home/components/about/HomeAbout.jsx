@@ -8,8 +8,7 @@ const HomeAbout = () => {
 	return (
 		<Container 
 			type='section'
-			maxWidth='110rem' 
-			isCentered
+			maxWidth='110rem'
 			className={styles.about}
 		>
 			<h2 className={styles.about_header}>
