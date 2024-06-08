@@ -1,0 +1,10 @@
+.page {
+	margin: 0 auto;
+	padding-block: 1rem;
+	text-align: center;
+}
+
+.error {
+	font-size: 2rem;
+	font-weight: 500;
+}
