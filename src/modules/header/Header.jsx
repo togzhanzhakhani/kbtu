@@ -1,10 +1,14 @@
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import styles from "./header.module.css";
+import headerLinks from '@common/utils/headerLinks';
 
 const Header = () => {
+
+	const {pathname: currentUrl} = useLocation();
+
 	return (
 		<nav>
 			<div className={styles.main}>
@@ -12,14 +16,23 @@ const Header = () => {
 					<div className={styles.kbtu_icon} />
 				</Link>
 
-				<div className={styles.navigation_buttons}>
-					<button>Проекты</button>
-					<button>Направления</button>
-					<Link to="/contacts">
-						Контакты
-					</Link>
-					<button>О нас</button>
-				</div>
+				<nav className={styles.navigation_buttons}>
+					{
+						headerLinks.map(l => {
+							const isActive = currentUrl === l.url;
+
+							return (
+								<Link 
+									key={l.id}
+									to={l.url} 
+									className={isActive && styles.active_link}
+								>
+									{l.name}
+								</Link>
+							)
+					})
+					}
+				</nav>
 
 				<div className={styles.right_side_elements}>
 					<Link to="/login">
