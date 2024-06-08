@@ -1,12 +1,12 @@
 import { useState } from 'react';
+import validateForm from '../utils/validateForm';
+import isObjectEmpty from '@common/utils/isObjectEmpty';
+import dataTemplate from '../utils/dataTemplate';
 
 const useContactForm = () => {
 
-	const [formData, setFormData] = useState({
-		name: '', surname: '',
-		email: '', phone: '',
-		topic: '', message: '',
-	});
+	const [formData, setFormData] = useState(dataTemplate);
+	const [errors, setErrors] = useState(dataTemplate);
 
 	const onFormChange = (e) => {
 		const inputName = e.target.name;
@@ -26,11 +26,31 @@ const useContactForm = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
+		setErrors(dataTemplate);
 
-		alert('Form has been submitted!')
+		const {
+			name, surname, email,
+			phone, topic, message
+		} = formData;
+
+		const errors = validateForm(
+			name, surname, email, phone, topic, message
+		);
+
+		if(!isObjectEmpty(errors)) {
+			setErrors(p => ({
+				...p,
+				...errors,
+			}));
+
+			return;
+		}
+
+		// TODO: submit form logic below
+		console.log('Form submit button\'s triggered');
 	};
 
-	return [formData, onFormChange, onSubmit]
+	return {formData, errors, onFormChange, onSubmit};
 };
 
 export default useContactForm;
