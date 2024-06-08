@@ -1,11 +1,16 @@
-import { useRouteError } from 'react-router-dom';
+import { Link, useNavigate, useRouteError } from 'react-router-dom';
 import Container from '@common/components/container/Container';
 import styles from './not_found.module.css';
 
 const NotFound = () => {
+	const navigate = useNavigate();
 	const error = useRouteError();
 
 	console.log(error);
+
+	const goBack = () => {
+		navigate(-1);
+	}
 
 	return (
 		<Container
@@ -15,6 +20,13 @@ const NotFound = () => {
 			<h1 className={styles.error}>
 				404. Such page doesn&apos;t exist
 			</h1>
+
+			<Link  
+				className={styles.link} 
+				onClick={goBack}
+			>
+				Go back to home?
+			</Link>
 		</Container>
 	);
 };
