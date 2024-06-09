@@ -1,9 +1,12 @@
 import Select from '@common/components/select/Select';
 import useStatusFilters from '@modules/projects/hooks/useStatusFilters';
 import useSearchbar from '@modules/projects/hooks/useSearchbar';
+import useToggle from '@common/hooks/useToggle';
+import directions from '@modules/projects/utils/directions';
 import magnifierIcon from '@assets/icons/magnifier.svg';
 import caretDown from "@assets/icons/caret_down.svg";
 import styles from './projects_config.module.css';
+import Clickaway from '@common/components/clickaway/Clickaway';
 
 // 'dirs' = 'directions'
 // 'app' = 'application'
@@ -18,6 +21,36 @@ const ProjectsConfig = () => {
 	const {
 		search, onSearchChange
 	} = useSearchbar();
+
+	const {	
+		value: areDirsVisible,
+		setValue: setDirsVisible,
+	} = useToggle(false);
+
+	const selectStyle = {
+		borderBottomLeftRadius: areDirsVisible ? '0' : '',
+		borderBottomRightRadius: areDirsVisible ? '0' : '',
+	};
+
+	const caretStyle = {
+		transform: areDirsVisible && 'rotate(180deg)',
+		transition: 'all 0.3s ease'
+	};
+
+	const onClickAway = (e) => {
+		const targetId = e.target.id;
+		const valid = [
+			'projects_config_dirs',
+			'projects_config_dirs_icon',
+			'projects_config_dirs_ph',
+		];
+
+		console.log(areDirsVisible, targetId);
+
+		if(areDirsVisible && !valid.includes(targetId)) {
+			setDirsVisible(false);
+		}
+	};
 
 	return (
 		<div className={styles.container}>
@@ -42,19 +75,45 @@ const ProjectsConfig = () => {
 			</p>
 
 			<div className={styles.dirs}>
-				<div className={styles.dirs_select}>
-					<p className={styles.dirs_placeholder}>
+				<div 
+					id='projects_config_dirs'
+					className={styles.dirs_select}
+					style={selectStyle}
+					onClick={() => setDirsVisible(true)}
+				>
+					<p 
+						id='projects_config_dirs_ph'
+						className={styles.dirs_placeholder}
+					>
 						Выберите
 					</p>
 
 					<img 
+						id='projects_config_dirs_icon'
 						src={caretDown} 
 						alt='caret pointing downwards' 
 						className={styles.caret_down}
+						style={caretStyle}
 					/>
 				</div>
 
-				{/* Directions here */}
+				{
+					areDirsVisible &&
+					<Clickaway onClickAway={onClickAway}>
+						<div className={styles.dirs_wrappable}>
+							{
+								directions.map((d, i) => (
+									<p
+										key={d.id == null ? i : d.id}
+										className={styles.dir}
+									>	
+										{d.name}
+									</p>
+								))
+							}
+						</div>
+					</Clickaway>
+				}
 			</div>
 
 			<p className={styles.label}>
