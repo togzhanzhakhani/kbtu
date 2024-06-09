@@ -1,4 +1,4 @@
-const data = [
+const projects = [
 	// NOTE: unique projects below
 	{
 		title: 'Разработка новой угольной шахты',
@@ -388,4 +388,4 @@ const data = [
 	},
 ];
 
-export default data;
+export default projects;

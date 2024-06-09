@@ -1,4 +1,3 @@
-
 const containerTypes = {
 	'div': 'div',
 	'section': 'section',
