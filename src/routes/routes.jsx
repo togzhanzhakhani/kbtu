@@ -4,6 +4,7 @@ import Registration from '@modules/authorization/Registration';
 import Home from '@modules/home/Home';
 import Contacts from '@modules/contacts/Contacts';
 import Projects from '@modules/projects/Projects';
+import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
 	{
 		path: '/*',
 		element: <NotFound />
+	},
+	{
+		path: '/directions',
+		element: <Directions />
 	},
 ];
 
