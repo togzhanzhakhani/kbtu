@@ -1,21 +1,28 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './projects_card.module.css';
 
 const ProjectsCard = ({card}) => {
+
+	const navigate = useNavigate();
 
 	if(card == null) {
 		return;
 	}
 
 	const {
-		title, descr, client, direction
+		id, title, descr, client, direction
 	} = card;
 
 	if(!title || !descr || !client || !direction) {
 		return;
 	}
 	
+	const navToProject = () => {
+		navigate(`/project/${id}`)
+	};
+
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} onClick={navToProject}>
 			<div className={styles.front}>
 				<h3 className={styles.title}>
 					{title}
