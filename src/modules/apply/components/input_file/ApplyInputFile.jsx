@@ -14,8 +14,19 @@ const ApplyInputFile = ({
 
 	const inputId = `${Math.random()}`;
 
-	const loadFile = () => {
+	// TODO: finish
+	const loadFile = (e) => {
+		const file = e.target.files[0];
 
+    if(file) {
+			const reader = new FileReader();
+
+			// reader.onload = (e) => {
+				
+			// };
+
+			reader.readAsDataURL(file);
+    }
 	};
 
 	return (
@@ -45,6 +56,7 @@ const ApplyInputFile = ({
 				<input
 					type='file'
 					className={styles.file_input}
+					onChange={loadFile}
 				/>
 			</div>
 		</div>
