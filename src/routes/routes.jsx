@@ -8,6 +8,7 @@ import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
 import Project from '@modules/project/Project';
 import getProjectById from '@common/api/getProjectById';
+import Apply from '@modules/apply/Apply';
 
 const routes = [
 	{
@@ -44,6 +45,10 @@ const routes = [
 		loader: async ({params}) => {
 			return getProjectById(params.id);
 		},
+	},
+	{
+		path: '/apply',
+		element: <Apply />,
 	},
 
 	// WARN: * route goes last
