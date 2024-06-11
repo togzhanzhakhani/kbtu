@@ -7,6 +7,7 @@ import Projects from '@modules/projects/Projects';
 import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
 import Project from '@modules/project/Project';
+import getProjectById from '@common/api/getProjectById';
 
 const routes = [
 	{
@@ -39,7 +40,10 @@ const routes = [
 	},
 	{
 		path: '/project/:id',
-		element: <Project />
+		element: <Project />,
+		loader: async ({params}) => {
+			return getProjectById(params.id);
+		},
 	},
 
 	// WARN: * route goes last
