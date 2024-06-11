@@ -38,7 +38,7 @@ const routes = [
 		element: <Directions />
 	},
 	{
-		path: '/project:id',
+		path: '/project/:id',
 		element: <Project />
 	},
 
