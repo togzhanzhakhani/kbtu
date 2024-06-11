@@ -3,12 +3,12 @@ import styles from './apply_input.module.css';
 import doExist from '@common/utils/doExist';
 
 const ApplyInput = ({
-	label, isRequired = false, 
+	label, name, isRequired = false, 
 	isMultiLine = false,
 	value, onChange
 }) => {
 
-	if(!doExist(value, onChange)) {
+	if(!doExist(value, onChange, name, label)) {
 		return;
 	}
 
@@ -32,7 +32,7 @@ const ApplyInput = ({
 				?
 				<textarea
 					id={inputId}
-					name={label}
+					name={name}
 					rows={5}
 					className={styles.input}
 					value={value}
@@ -42,7 +42,7 @@ const ApplyInput = ({
 				:
 				<input 
 					id={inputId}
-					name={label}
+					name={name}
 					type='text'
 					className={styles.input}
 					value={value}
