@@ -7,7 +7,6 @@ const ApplyInputFile = ({
 	label, isRequired = false,
 }) => {
 
-	// TODO: improve
 	if(!doExist(label)) {
 		return;
 	}
@@ -21,9 +20,9 @@ const ApplyInputFile = ({
     if(file) {
 			const reader = new FileReader();
 
-			// reader.onload = (e) => {
-				
-			// };
+			reader.onload = (e) => {
+				console.log(e);
+			};
 
 			reader.readAsDataURL(file);
     }
@@ -54,6 +53,7 @@ const ApplyInputFile = ({
 				</p>
 
 				<input
+					id={inputId}
 					type='file'
 					className={styles.file_input}
 					onChange={loadFile}

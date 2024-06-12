@@ -41,7 +41,6 @@ const ApplyForm = () => {
 			<ApplyInputFile
 				label='Техническое задание'
 				name='task'
-				
 			/>
 
 			<ApplyInput
