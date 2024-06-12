@@ -4,6 +4,7 @@ import Container from '@common/components/container/Container';
 import ProjectsHeader from './components/header/ProjectsHeader';
 import styles from './projects.module.css';
 import ProjectsMain from './components/main/ProjectsMain';
+import ProjectsPagination from './components/pagination/ProjectsPagination';
 
 const Projects = () => {
 
@@ -16,6 +17,8 @@ const Projects = () => {
 				maxWidth='70rem'
 				className={styles.module}
 			>
+				<ProjectsPagination />
+
 				<ProjectsHeader />
 
 				<ProjectsMain />

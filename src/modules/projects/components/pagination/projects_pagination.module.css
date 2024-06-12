@@ -1,0 +1,15 @@
+.pagination {
+	margin-block-start: 1.875rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.caret_right {
+	border: 1px solid #DFE3E8;
+}
+
+.caret_left {
+	background-color: #c8cfd5;
+}
