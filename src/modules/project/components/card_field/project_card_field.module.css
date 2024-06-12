@@ -8,6 +8,19 @@
 	opacity: 0.7;
 }
 
-.value {
+.main {
 	flex: 2;
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+}
+
+.icon {
+	--max-size: 1.25rem;
+	max-width: var(--max-size);
+	max-height: var(--max-size); 
+}
+
+.value {
+	font-family: 'Rubik';
 }
