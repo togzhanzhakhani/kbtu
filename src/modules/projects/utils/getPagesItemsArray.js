@@ -7,11 +7,11 @@ const getPagesItemsArray = (startPage, totalPagesCount) => {
 		throw new Error('Pages count must exist');
 	}
 
-	if(startPage + 5 >= totalPagesCount) {
+	if(startPage + 5 > totalPagesCount) {
 		return;
 	}
 
-	if(totalPagesCount <= startPage + 5) {
+	if(startPage + 5 === totalPagesCount) {
 		return [
 			startPage, startPage + 1, startPage + 2,
 			startPage + 3, startPage + 4,  
