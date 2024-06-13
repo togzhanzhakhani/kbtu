@@ -6,10 +6,15 @@
 	gap: 0.5rem;
 }
 
-.caret_right {
+.item {
 	border: 1px solid #DFE3E8;
 }
 
 .caret_left {
 	background-color: #c8cfd5;
+}
+
+.value {
+	font-size: 0.875rem;
+	font-weight: 700;
 }

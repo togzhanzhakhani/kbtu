@@ -3,7 +3,7 @@ import mergeStrings from '@common/utils/mergeStrings';
 import styles from './projects_pagination_item.module.css';
 
 const ProjectsPaginationItem = ({
-	item, onClick, boxClassName = '',
+	item, onClick, boxClassName = '', style = {},
 }) => {
 
 	if(!doExist(item, onClick)) {
@@ -13,6 +13,7 @@ const ProjectsPaginationItem = ({
 	return (
 		<div 
 			className={mergeStrings(styles.box, boxClassName)}
+			style={style}
 			onClick={onClick}
 		>
 			{item}
