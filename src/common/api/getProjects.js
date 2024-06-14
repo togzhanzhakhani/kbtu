@@ -6,23 +6,23 @@ const getProjects = (page, pageSize, maxProjectsCount) => {
 	return new Promise((res, rej) => {
 		try {
 			if(!doExist(page, pageSize)) {
-				return [];
+				res([]);
 			}
-		
+			
 			const pageInt = parseInt(page);
 			const pageSizeInt = parseInt(pageSize);
 		
 			if(pageInt < 1 || pageSizeInt < 1) {
-				return [];
+				res([]);
 			}
 		
 			if(pageInt * pageSizeInt > maxProjectsCount) {
-				return [];
-			}
-		
-			const start = (pageInt - 1) * pageSizeInt;
+				setTimeout(() => res(projects), 2000)
+			} else {
+				const start = (pageInt - 1) * pageSizeInt;
 			
-			setTimeout(() => res(projects.slice(start, start + pageSizeInt)), 2000)
+				setTimeout(() => res(projects.slice(start, start + pageSizeInt)), 2000);
+			}
 		} catch(e) {
 			rej(e);
 		}

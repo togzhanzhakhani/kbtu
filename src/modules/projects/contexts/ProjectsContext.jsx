@@ -8,6 +8,7 @@ const ProjectsContextProvider = ({children}) => {
 	const {
 		projects, setProjects,
 		isLoading, setLoading,
+		projectsCount,
 	} = useProjects();
 
 	if(children == null) {
@@ -17,6 +18,7 @@ const ProjectsContextProvider = ({children}) => {
 	const projectsCtxVal = {
 		projects, setProjects,
 		isLoading, setLoading,
+		projectsCount
 	};
 
 	return (

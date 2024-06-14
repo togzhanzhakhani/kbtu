@@ -1,35 +1,40 @@
-import { useState } from "react";
-import getPagesItemsArray from "../utils/getPagesItemsArray";
+import { useContext } from "react";
+import { useSearchParams } from "react-router-dom";
+import ProjectsContext from "../contexts/ProjectsContext";
+import getPagesItems from "../utils/getPagesItems";
 
-const usePagination = (totalProjectsCount) => {
+const usePagination = () => {
 
-	const [curPage, setCurPage] = useState(1);
-	const [pages, setPages] = useState(
-		getPagesItemsArray(curPage, totalProjectsCount)
-	);
+	const {projectsCount} = useContext(ProjectsContext);
+	
+	const [searchParams, setSearchParams] = useSearchParams();
+	const pageParam = searchParams.get('page');
+	const pageSizeParam = searchParams.get('page_size');
 
-	const maxPage = 5; // TODO: change
+	const page = parseInt(pageParam) || 1;
+	const pageSize = parseInt(pageSizeParam) || 5;
+	const pages = getPagesItems(page, pageSize, projectsCount);
 	
 	const toNextPage = () => {
-		if(curPage + 1 > maxPage) {
+		if(page + 1 > projectsCount) {
 			return;
 		}
 
-		const pagesArr = getPagesItemsArray(curPage + 1, totalProjectsCount);
-		setPages(p => pagesArr == null ? p : pagesArr);
-
-		setCurPage(p => p + 1);
+		setSearchParams({
+			page: page + 1,
+			page_size: pageSize,
+		});
 	};
 
 	const toPrevPage = () => {
-		if(curPage - 1 <= 0) {
+		if(page - 1 <= 0) {
 			return;
 		}
 
-		const pagesArr = getPagesItemsArray(curPage - 1, totalProjectsCount);
-		setPages(p => pagesArr == null ? p : pagesArr);
-
-		setCurPage(p => p - 1);
+		setSearchParams({
+			page: page - 1,
+			page_size: pageSize,
+		});
 	};
 
 	const toPage = (value) => {
@@ -42,16 +47,15 @@ const usePagination = (totalProjectsCount) => {
 			return;
 		}
 
-		const pagesArr = getPagesItemsArray(value, totalProjectsCount);
-		setPages(p => pagesArr == null ? p : pagesArr);
-
-		setCurPage(value);
+		setSearchParams({
+			page: value,
+			page_size: pageSize,
+		});
 	};
 
 	return {
-		curPage, pages,
-		toNextPage, toPrevPage,
-		toPage, 
+		page, pages, toNextPage, 
+		toPrevPage, toPage, 
 	};
 };
 

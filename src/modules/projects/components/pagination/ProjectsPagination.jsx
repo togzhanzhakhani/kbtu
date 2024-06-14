@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { PropagateLoader } from 'react-spinners';
 import ProjectsPaginationItem from '../pagination_item/ProjectsPaginationItem';
 import usePagination from '@modules/projects/hooks/usePagination';
 import caretDown from '@assets/icons/caret_down.svg';
@@ -6,13 +6,10 @@ import styles from './projects_pagination.module.css';
 
 const ProjectsPagination = () => {
 
-	const {projectsCount} = useLoaderData();
-
 	const {
-		curPage, pages,
-		toPrevPage, toNextPage,
-		toPage,
-	} = usePagination(projectsCount);
+		page: curPage, pages, toPrevPage, 
+		toNextPage, toPage,
+	} = usePagination();
 
 	const CaretLeft = (
 		<img 
@@ -47,8 +44,21 @@ const ProjectsPagination = () => {
 		borderColor: 'var(--color-blue-dark)',
 	};
 
+	if(pages == null || pages.length === 0) {
+		return (
+		<div className={styles.container}>
+			<PropagateLoader
+				size='0.5rem'
+				color='var(--color-blue-dark)'
+				speedMultiplier='0.5'
+				className={styles.loader}
+			/>
+		</div>
+		);
+	}
+
 	return (
-		<div className={styles.pagination}>
+		<div className={styles.container}>
 			<ProjectsPaginationItem 
 				item={CaretLeft}
 				boxClassName={styles.caret_left}

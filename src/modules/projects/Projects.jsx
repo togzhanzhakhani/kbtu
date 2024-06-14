@@ -19,7 +19,7 @@ const Projects = () => {
 					maxWidth='70rem'
 					className={styles.module}
 				>
-					{/* <ProjectsPagination /> */}
+					<ProjectsPagination />
 
 					<ProjectsHeader />
 
