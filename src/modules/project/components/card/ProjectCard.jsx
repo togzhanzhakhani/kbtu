@@ -1,58 +1,61 @@
 import ProjectCardField from '../card_field/ProjectCardField';
+import downloadIcon from '@assets/icons/download.svg';
 import styles from './project_card.module.css';
 
 const ProjectCard = ({project}) => {
 	
 	const {
 		title, descr, client, 
-		direction, phone, note,
+		status, direction, phone, 
+		note, clientName
 	} = project;
 
 	return (
 		<div className={styles.card}>
 			<h2 className={styles.title}>
-				{title}
+				{title || 'Заголовок отсутствует'}
 			</h2>
 
 			<div className={styles.fields}>
 				<ProjectCardField
 					label='Заказчик'
-					value={client}
+					value={client || 'Заказчик неизвестен'}
 				/>
 
 				<ProjectCardField
 					label='Статус заявки'
-					value='Нужно ли это вообще?'
+					value={status || 'Статус отсутствует'}
 				/>
 
 				<ProjectCardField
 					label='Тех задание'
-					value='Иконка сюда. Техническое задание'
+					value='Техническое задание'
+					icon={downloadIcon}
 				/>
 
 				<ProjectCardField
 					label='Направление'
-					value={direction}
+					value={direction || 'Направление неизвестно'}
 				/>
 
 				<ProjectCardField
 					label='Описание'
-					value={descr}
+					value={descr || 'Описание отсутствует'}
 				/>
 
 				<ProjectCardField
 					label='ФИО ответственного лица от заказчика'
-					value={client}
+					value={clientName || 'ФИО отсутствует'}
 				/>
 
 				<ProjectCardField
 					label='Контакты ответственного лица от заказчика'
-					value={phone}
+					value={phone || 'Телефон отсутствует'}
 				/>
 
 				<ProjectCardField
 					label='Примечание'
-					value={note}
+					value={note || 'Примечание отсутствует'}
 				/>
 			</div>
 		</div>

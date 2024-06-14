@@ -23,6 +23,7 @@
 	gap: 0.5rem;
 	background-color: #ECEDEE;
 	border-radius: 0.5rem;
+	cursor: pointer;
 }
 
 .clip_icon {
@@ -40,6 +41,6 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	/* opacity: 0; */
+	opacity: 0;
 	cursor: pointer;
 }

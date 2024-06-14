@@ -1,3 +1,4 @@
+import ButtonBlueRound from '@common/components/buttons/button_blue_round/ButtonBlueRound';
 import useApplyForm from '../hooks/useApplyForm';
 import ApplyInput from '../input/ApplyInput';
 import ApplyInputFile from '../input_file/ApplyInputFile';
@@ -6,7 +7,7 @@ import styles from './apply_form.module.css';
 const ApplyForm = () => {
 
 	const {
-		formData, change
+		formData, change, onSubmit,
 	} = useApplyForm();
 
 	return (
@@ -40,7 +41,6 @@ const ApplyForm = () => {
 			<ApplyInputFile
 				label='Техническое задание'
 				name='task'
-				
 			/>
 
 			<ApplyInput
@@ -65,6 +65,12 @@ const ApplyForm = () => {
 				value={formData.note}
 				onChange={e => change('note', e.target.value)}
 				isMultiLine
+			/>
+
+			<ButtonBlueRound
+				text='Сохранить заявку'
+				className={styles.button}
+				onClick={onSubmit}
 			/>
 		</form>
 	);

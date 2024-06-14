@@ -9,6 +9,8 @@ import NotFound from '@modules/not_found/NotFound';
 import Project from '@modules/project/Project';
 import getProjectById from '@common/api/getProjectById';
 import Apply from '@modules/apply/Apply';
+import getProjectsCount from '@common/api/getProjectsCount';
+import getProjects from '@common/api/getProjects';
 
 const routes = [
 	{
@@ -32,12 +34,12 @@ const routes = [
 		element: <Contacts />
 	},
 	{
-		path: '/projects',
-		element: <Projects />
-	},
-	{
 		path: '/directions',
 		element: <Directions />
+	},
+	{
+		path: '/projects',
+		element: <Projects />,
 	},
 	{
 		path: '/project/:id',

@@ -16,8 +16,12 @@ const useApplyForm = () => {
 		}));
 	};
 
+	const onSubmit = () => {
+		console.log('Apply form\'s been submitted!');
+	};
+
 	return {
-		formData, change,
+		formData, change, onSubmit,
 	}
 };
 
