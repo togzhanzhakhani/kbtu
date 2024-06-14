@@ -19,11 +19,11 @@ const Projects = () => {
 					maxWidth='70rem'
 					className={styles.module}
 				>
-					<ProjectsPagination />
-
 					<ProjectsHeader />
 
 					<ProjectsMain />
+
+					<ProjectsPagination />
 				</Container>
 			</ProjectsContextProvider>
 

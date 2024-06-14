@@ -17,11 +17,11 @@ const getProjects = (page, pageSize, maxProjectsCount) => {
 			}
 		
 			if(pageInt * pageSizeInt > maxProjectsCount) {
-				setTimeout(() => res(projects), 2000)
+				setTimeout(() => res(projects), 500)
 			} else {
 				const start = (pageInt - 1) * pageSizeInt;
 			
-				setTimeout(() => res(projects.slice(start, start + pageSizeInt)), 2000);
+				setTimeout(() => res(projects.slice(start, start + pageSizeInt)), 500);
 			}
 		} catch(e) {
 			rej(e);
