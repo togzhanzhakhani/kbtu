@@ -6,7 +6,7 @@ import styles from './projects_pagination.module.css';
 
 const ProjectsPagination = () => {
 
-	const projectsCount = useLoaderData();
+	const {projectsCount} = useLoaderData();
 
 	const {
 		curPage, pages,

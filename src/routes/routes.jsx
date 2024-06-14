@@ -10,6 +10,7 @@ import Project from '@modules/project/Project';
 import getProjectById from '@common/api/getProjectById';
 import Apply from '@modules/apply/Apply';
 import getProjectsCount from '@common/api/getProjectsCount';
+import getProjects from '@common/api/getProjects';
 
 const routes = [
 	{
@@ -39,7 +40,6 @@ const routes = [
 	{
 		path: '/projects',
 		element: <Projects />,
-		loader: async () => getProjectsCount(),
 	},
 	{
 		path: '/project/:id',

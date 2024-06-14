@@ -3,7 +3,7 @@ import ProjectsConfig from '../config/ProjectsConfig';
 import styles from './projects_main.module.css';
 
 const ProjectsMain = () => {
-
+	
 	return (
 		<div className={styles.container}>
 			<ProjectsCards />
