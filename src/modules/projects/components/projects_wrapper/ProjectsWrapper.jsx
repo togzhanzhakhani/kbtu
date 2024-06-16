@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Project from "../project/Project";
 import Container from "@common/components/container/Container";
 import ProjectsContext from "@modules/projects/contexts/ProjectsContext";
@@ -10,12 +10,12 @@ import ProjectsPagination from "../pagination/ProjectsPagination";
 // ugly ass code
 const ProjectsWrapper = () => {
 
-	const {isOneView} = useContext(ProjectsContext);
+	const {isOneViewed} = useContext(ProjectsContext);
 
 	return (
 		<>
 			{
-				isOneView
+				isOneViewed
 				?
 					<Project />
 				:

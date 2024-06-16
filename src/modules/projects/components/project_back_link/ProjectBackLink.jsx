@@ -1,13 +1,16 @@
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import ProjectsContext from '@modules/projects/contexts/ProjectsContext';
 import arrowLeft from '@assets/icons/arrow_left.svg';
 import styles from './project_back_link.module.css';
 
 const ProjectBackLink = () => {
 
-	const navigate = useNavigate();
+	const {
+		closeProject,
+	} = useContext(ProjectsContext);
 
 	const goBack = () => {
-		navigate(-1);
+		closeProject();
 	};
 
 	return (

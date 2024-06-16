@@ -1,12 +1,9 @@
-import { Link, useNavigate, useRouteError } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Container from '@common/components/container/Container';
 import styles from './not_found.module.css';
 
 const NotFound = () => {
 	const navigate = useNavigate();
-	const error = useRouteError();
-
-	console.error(error);
 
 	const goBack = () => {
 		navigate(-1);

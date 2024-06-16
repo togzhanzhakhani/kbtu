@@ -5,3 +5,7 @@
 	grid-template-columns: 1fr 4fr;
 	align-items: flex-start;
 }
+
+.loader {
+	margin: 0 auto;
+}
