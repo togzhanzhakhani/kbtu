@@ -11,5 +11,3 @@
 
 ## Reference
 [Architecture reference.](https://alexkondov.com/tao-of-react/)
-
-'placeholder' file is necessary, because git won't push empty folders to Github. It also serves to force folder structure spread.
