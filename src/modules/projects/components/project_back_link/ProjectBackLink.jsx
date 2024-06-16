@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import arrowLeft from '@assets/icons/arrow_left.svg';
 import styles from './project_back_link.module.css';
 
-const BackLink = () => {
+const ProjectBackLink = () => {
 
 	const navigate = useNavigate();
 
@@ -25,4 +25,4 @@ const BackLink = () => {
 	);
 };
 
-export default BackLink;
+export default ProjectBackLink;

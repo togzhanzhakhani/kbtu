@@ -1,4 +1,4 @@
-import isCardFieldValid from '@modules/project/utils/isCardFieldValid';
+import isCardFieldValid from '@modules/projects/utils/isCardFieldValid';
 import styles from './project_card_field.module.css';
 
 const ProjectCardField = ({

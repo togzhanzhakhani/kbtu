@@ -6,7 +6,7 @@ const NotFound = () => {
 	const navigate = useNavigate();
 	const error = useRouteError();
 
-	console.log(error);
+	console.error(error);
 
 	const goBack = () => {
 		navigate(-1);
