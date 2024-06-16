@@ -28,7 +28,6 @@ const ApplyInputFile = ({
     if(file) {
 			const fileType = file.type;
 			const fileSize = file.size;
-			console.log(fileSize / 1e6);
 
 			if(fileType !== 'application/pdf') {
 				setError('Файл должен быть PDF');
@@ -50,7 +49,7 @@ const ApplyInputFile = ({
 			};
 
 			reader.onerror = (e) => {
-				console.error('Error reading file:', e);
+				setError(e);
 			};
 
 			reader.readAsDataURL(file);
