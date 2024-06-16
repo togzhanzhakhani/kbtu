@@ -7,7 +7,7 @@ const applyFormTemplate = {
 	client: '',
 	phone: '',
 	note: '',
-	
+	file: '',
 };
 
 export default applyFormTemplate;

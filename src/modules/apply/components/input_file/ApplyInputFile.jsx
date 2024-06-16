@@ -4,10 +4,10 @@ import clipIcon from '@assets/icons/clip.svg';
 import styles from './apply_input_file.module.css';
 
 const ApplyInputFile = ({
-	label, isRequired = false,
+	label, isRequired = false, onChange
 }) => {
 
-	if(!doExist(label)) {
+	if(!doExist(label, onChange)) {
 		return;
 	}
 
@@ -21,7 +21,12 @@ const ApplyInputFile = ({
 			const reader = new FileReader();
 
 			reader.onload = (e) => {
-				console.log(e);
+				const base64String = e.target.result.split(',')[1];
+				onChange(base64String);
+			};
+
+			reader.onerror = (e) => {
+				console.error('Error reading file:', e);
 			};
 
 			reader.readAsDataURL(file);

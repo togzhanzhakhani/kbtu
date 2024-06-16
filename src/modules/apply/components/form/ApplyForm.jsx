@@ -48,6 +48,7 @@ const ApplyForm = () => {
 			<ApplyInputFile
 				label='Техническое задание'
 				name='task'
+				onChange={base64String => change('file', base64String)}
 			/>
 
 			<ApplyInput
