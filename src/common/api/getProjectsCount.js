@@ -5,7 +5,7 @@ import projects from "@modules/projects/utils/projects";
 const getProjectsCount = () => {
 	return new Promise((res, rej) => {
 		try {	
-			setTimeout(() => res(projects.length), 500);
+			setTimeout(() => res(projects.length), 1500);
 		} catch(e) {
 			rej(e);
 		}

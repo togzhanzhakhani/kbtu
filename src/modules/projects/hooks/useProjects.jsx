@@ -15,31 +15,41 @@ const useProjects = () => {
 	const [isLoading, setLoading] = useState(false);
 	
 	useEffect(() => {
-		// eslint-disable-next-line
-		const p = new Promise(res => {
-			setLoading(true);
+		setLoading(true);
 
+		const p = new Promise(res => {
 			const projectsCnt = getProjectsCount();
 			projectsCnt.then(res);
 		})
 		.then(projectsCnt => {
 			setProjectsCount(projectsCnt);
+
 			return getProjects(page, pageSize, projectsCnt);
 		})
 		.then(projects => {
 			setProjects(projects);
-			setLoading(false);
 		})
 		.catch(e => {
 			console.error(e);
+		})
+		.finally(() => {
 			setLoading(false);
 		});
-	}, [page, pageSize]);
+
+		return () => {
+			setLoading(false);
+		};
+	}, [page, pageSize, searchParams]);
+
+	const stopRequest = () => {
+		
+	};
 
 	return {
 		projects, setProjects,
 		projectsCount,
 		isLoading, setLoading,
+		stopRequest,
 	};
 };
 
