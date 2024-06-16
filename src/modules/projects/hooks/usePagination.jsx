@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import ProjectsContext from "../contexts/ProjectsContext";
 import getPagesItems from "../utils/getPagesItems";
 
-const usePagination = () => {
+const usePagination = (stopRequest) => {
 
 	const {projectsCount} = useContext(ProjectsContext);
 	
@@ -20,6 +20,8 @@ const usePagination = () => {
 			return;
 		}
 
+		stopRequest();
+
 		setSearchParams({
 			page: page + 1,
 			page_size: pageSize,
@@ -31,6 +33,8 @@ const usePagination = () => {
 			return;
 		}
 
+		stopRequest();
+
 		setSearchParams({
 			page: page - 1,
 			page_size: pageSize,
@@ -41,6 +45,8 @@ const usePagination = () => {
 		if(value == null) {
 			throw new Error('Value must be provided');
 		}
+
+		stopRequest();
 
 		if(value == '...') {
 			// TODO: what should happen?

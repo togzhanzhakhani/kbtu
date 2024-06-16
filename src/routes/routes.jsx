@@ -6,11 +6,7 @@ import Contacts from '@modules/contacts/Contacts';
 import Projects from '@modules/projects/Projects';
 import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
-import Project from '@modules/project/Project';
-import getProjectById from '@common/api/getProjectById';
 import Apply from '@modules/apply/Apply';
-import getProjectsCount from '@common/api/getProjectsCount';
-import getProjects from '@common/api/getProjects';
 
 const routes = [
 	{
@@ -40,13 +36,6 @@ const routes = [
 	{
 		path: '/projects',
 		element: <Projects />,
-	},
-	{
-		path: '/project/:id',
-		element: <Project />,
-		loader: async ({params}) => {
-			return getProjectById(params.id);
-		},
 	},
 	{
 		path: '/apply',

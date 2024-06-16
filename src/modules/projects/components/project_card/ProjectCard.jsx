@@ -1,4 +1,4 @@
-import ProjectCardField from '../card_field/ProjectCardField';
+import ProjectCardField from '../project_card_field/ProjectCardField';
 import downloadIcon from '@assets/icons/download.svg';
 import styles from './project_card.module.css';
 

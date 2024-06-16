@@ -1,15 +1,19 @@
+import { useContext } from 'react';
 import { PropagateLoader } from 'react-spinners';
 import ProjectsPaginationItem from '../pagination_item/ProjectsPaginationItem';
+import ProjectsContext from '@modules/projects/contexts/ProjectsContext';
 import usePagination from '@modules/projects/hooks/usePagination';
 import caretDown from '@assets/icons/caret_down.svg';
 import styles from './projects_pagination.module.css';
 
 const ProjectsPagination = () => {
 
+	const {stopRequest} = useContext(ProjectsContext);
+
 	const {
 		page: curPage, pages, toPrevPage, 
 		toNextPage, toPage,
-	} = usePagination();
+	} = usePagination(stopRequest);
 
 	const CaretLeft = (
 		<img 

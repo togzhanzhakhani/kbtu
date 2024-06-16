@@ -1,7 +1,8 @@
 import ButtonBlueRound from '@common/components/buttons/button_blue_round/ButtonBlueRound';
-import useApplyForm from '../hooks/useApplyForm';
+import useApplyForm from '../../hooks/useApplyForm';
 import ApplyInput from '../input/ApplyInput';
 import ApplyInputFile from '../input_file/ApplyInputFile';
+import ApplyInputSelect from '../input_select/InputSelect';
 import styles from './apply_form.module.css';
 
 const ApplyForm = () => {
@@ -29,7 +30,13 @@ const ApplyForm = () => {
 				isRequired
 			/>
 
-			{/* Select input here */}
+			<ApplyInputSelect
+				label='Направление заявки (проекта)'
+				name='direction'
+				value={formData.direction}
+				onChange={d => change('direction', d)}
+				isRequired
+			/>
 
 			<ApplyInput
 				label='Бюджет'
@@ -41,6 +48,7 @@ const ApplyForm = () => {
 			<ApplyInputFile
 				label='Техническое задание'
 				name='task'
+				onChange={base64String => change('file', base64String)}
 			/>
 
 			<ApplyInput

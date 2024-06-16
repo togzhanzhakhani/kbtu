@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import ProjectsContext from '@modules/projects/contexts/ProjectsContext';
 import styles from './projects_card.module.css';
 
 const ProjectsCard = ({card}) => {
 
-	const navigate = useNavigate();
+	const {openProject} = useContext(ProjectsContext);
 
 	if(card == null) {
 		return;
@@ -18,7 +19,7 @@ const ProjectsCard = ({card}) => {
 	}
 	
 	const navToProject = () => {
-		navigate(`/project/${id}`)
+		openProject(id);
 	};
 
 	return (
