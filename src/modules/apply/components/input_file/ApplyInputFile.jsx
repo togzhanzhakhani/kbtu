@@ -27,7 +27,7 @@ const ApplyInputFile = ({
 
     if(file) {
 			const fileType = file.type;
-			const fileSize = file.size;
+			const fileSize = file.size / 1e6;
 
 			if(fileType !== 'application/pdf') {
 				setError('Файл должен быть PDF');
