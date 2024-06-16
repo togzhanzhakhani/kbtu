@@ -35,6 +35,16 @@
 	opacity: 0.9;
 }
 
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.error {
+	color: #ff0033;
+}
+
 .file_input {
 	position: absolute;
 	top: 0;
@@ -43,4 +53,18 @@
 	left: 0;
 	opacity: 0;
 	cursor: pointer;
+}
+
+.file_preview {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.file_name {
+	max-width: 40ch;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
 }
