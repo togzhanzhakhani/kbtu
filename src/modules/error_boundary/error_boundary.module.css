@@ -1,0 +1,14 @@
+.section {
+	padding: 5rem;
+	text-align: center;
+}
+
+.error_message {
+	margin-block: 1rem;
+	font-style: italic;
+}
+
+.button {
+	padding: 1rem;
+	font-size: 1rem;
+}
