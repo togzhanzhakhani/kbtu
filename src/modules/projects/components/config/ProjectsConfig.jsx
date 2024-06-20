@@ -130,7 +130,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						В обработке
+						Все
 					</p>
 				</div>
 
@@ -143,7 +143,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						Принято
+						Сбор предложений
 					</p>
 				</div>
 
@@ -156,7 +156,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						Отказано
+						Завершено
 					</p>
 				</div>
 			</div>

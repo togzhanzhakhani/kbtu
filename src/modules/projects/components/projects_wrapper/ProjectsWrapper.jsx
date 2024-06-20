@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Project from "../project/Project";
 import Container from "@common/components/container/Container";
-import ProjectsContext from "@modules/projects/contexts/ProjectsContext";
-import styles from './projects_wrapper.module.css';
 import ProjectsHeader from "../header/ProjectsHeader";
 import ProjectsMain from "../main/ProjectsMain";
 import ProjectsPagination from "../pagination/ProjectsPagination";
+import ProjectsContext from "@modules/projects/contexts/ProjectsContext";
+import styles from './projects_wrapper.module.css';
 
-// ugly ass code
 const ProjectsWrapper = () => {
 
 	const {isOneViewed} = useContext(ProjectsContext);

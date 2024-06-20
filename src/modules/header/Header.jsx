@@ -2,8 +2,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import styles from "./header.module.css";
 import headerLinks from '@common/utils/headerLinks';
+import styles from "./header.module.css";
 
 const Header = () => {
 

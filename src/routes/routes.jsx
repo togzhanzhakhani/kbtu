@@ -7,11 +7,13 @@ import Projects from '@modules/projects/Projects';
 import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
 import Apply from '@modules/apply/Apply';
+import ErrorBoundary from '@modules/error_boundary/ErrorBoundary';
 
 const routes = [
 	{
 		path: '/',
-		element: <Home />
+		element: <Home />,
+		errorElement: <ErrorBoundary />,
 	},
 	{
 		path: '/login',
