@@ -26,6 +26,8 @@ const ApplyInputFile = ({
 		const file = e.target.files[0];
 
     if(file) {
+			setFileName('');
+
 			const fileType = file.type;
 			const fileSize = file.size / 1e6;
 
