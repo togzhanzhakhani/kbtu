@@ -1,25 +1,18 @@
 import Header from '@modules/header/Header';
 import Footer from '@modules/footer/Footer';
 import Container from '@common/components/container/Container';
-import ProjectsHeader from './components/header/ProjectsHeader';
-import styles from './projects.module.css';
-import ProjectsMain from './components/main/ProjectsMain';
+import ProjectsWrapper from './components/projects_wrapper/ProjectsWrapper';
+import { ProjectsContextProvider } from './contexts/ProjectsContext';
 
 const Projects = () => {
 
 	return (
-		<Container className={styles.page}>
+		<Container>
 			<Header />
 
-			<Container
-				type='section'
-				maxWidth='70rem'
-				className={styles.module}
-			>
-				<ProjectsHeader />
-
-				<ProjectsMain />
-			</Container>
+			<ProjectsContextProvider>
+				<ProjectsWrapper />
+			</ProjectsContextProvider>
 
 			<Footer />
 		</Container>

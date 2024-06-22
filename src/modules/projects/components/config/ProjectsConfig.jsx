@@ -1,12 +1,12 @@
 import Select from '@common/components/select/Select';
+import Clickaway from '@common/components/clickaway/Clickaway';
 import useStatusFilters from '@modules/projects/hooks/useStatusFilters';
 import useSearchbar from '@modules/projects/hooks/useSearchbar';
 import useToggle from '@common/hooks/useToggle';
-import directions from '@modules/projects/utils/directions';
 import magnifierIcon from '@assets/icons/magnifier.svg';
 import caretDown from "@assets/icons/caret_down.svg";
 import styles from './projects_config.module.css';
-import Clickaway from '@common/components/clickaway/Clickaway';
+import directions from '@common/utils/directions';
 
 // 'dirs' = 'directions'
 // 'app' = 'application'
@@ -130,7 +130,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						В обработке
+						Все
 					</p>
 				</div>
 
@@ -143,7 +143,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						Принято
+						Сбор предложений
 					</p>
 				</div>
 
@@ -156,7 +156,7 @@ const ProjectsConfig = () => {
 					/>
 
 					<p className={styles.radio_label}>
-						Отказано
+						Завершено
 					</p>
 				</div>
 			</div>

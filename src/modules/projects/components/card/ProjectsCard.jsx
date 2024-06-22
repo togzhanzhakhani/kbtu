@@ -1,21 +1,29 @@
+import { useContext } from 'react';
+import ProjectsContext from '@modules/projects/contexts/ProjectsContext';
 import styles from './projects_card.module.css';
 
 const ProjectsCard = ({card}) => {
+
+	const {openProject} = useContext(ProjectsContext);
 
 	if(card == null) {
 		return;
 	}
 
 	const {
-		title, descr, client, direction
+		id, title, descr, client, direction
 	} = card;
 
 	if(!title || !descr || !client || !direction) {
 		return;
 	}
 	
+	const navToProject = () => {
+		openProject(id);
+	};
+
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} onClick={navToProject}>
 			<div className={styles.front}>
 				<h3 className={styles.title}>
 					{title}

@@ -1,0 +1,11 @@
+.module {
+	margin: 0 auto;
+	padding: 3.375rem 3.75rem;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	align-items: flex-start;
+}
+
+.loader {
+	margin: 0 auto;
+}

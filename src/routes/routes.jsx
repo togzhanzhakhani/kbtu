@@ -6,11 +6,14 @@ import Contacts from '@modules/contacts/Contacts';
 import Projects from '@modules/projects/Projects';
 import Directions from '@modules/directions/DirectionsPage';
 import NotFound from '@modules/not_found/NotFound';
+import Apply from '@modules/apply/Apply';
+import ErrorBoundary from '@modules/error_boundary/ErrorBoundary';
 
 const routes = [
 	{
 		path: '/',
-		element: <Home />
+		element: <Home />,
+		errorElement: <ErrorBoundary />,
 	},
 	{
 		path: '/login',
@@ -29,16 +32,22 @@ const routes = [
 		element: <Contacts />
 	},
 	{
-		path: '/projects',
-		element: <Projects />
+		path: '/directions',
+		element: <Directions />
 	},
+	{
+		path: '/projects',
+		element: <Projects />,
+	},
+	{
+		path: '/apply',
+		element: <Apply />,
+	},
+
+	// WARN: * route goes last
 	{
 		path: '/*',
 		element: <NotFound />
-	},
-	{
-		path: '/directions',
-		element: <Directions />
 	},
 ];
 

@@ -1,0 +1,17 @@
+.box {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	cursor: pointer;
+}
+
+.arrow_icon {
+	--max-size: 2rem;
+	max-width: var(--max-size);
+	max-height: var(--max-size);
+}
+
+.message {
+	font-weight: 600;
+	color: var(--color-blue-dark);
+}

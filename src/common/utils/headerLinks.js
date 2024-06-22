@@ -7,7 +7,7 @@ const headerLinks = [
 	{
 		id: 2,
 		name: 'Проекты',
-		url: '/projects',
+		url: '/projects?page=1&page_size=5',
 	},
 	{
 		id: 3,
