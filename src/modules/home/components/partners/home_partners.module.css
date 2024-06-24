@@ -62,3 +62,9 @@
 	display: inline-block;
   margin-inline: var(--space-between-logos);
 }
+
+@media (max-width: 1024px) {
+	.heading {
+		font-size: 3.1rem;
+	}
+}
