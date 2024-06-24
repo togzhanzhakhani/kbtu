@@ -1,3 +1,10 @@
 .home {
 	
 }
+
+@media (max-width: 480px) {
+    .home{
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
